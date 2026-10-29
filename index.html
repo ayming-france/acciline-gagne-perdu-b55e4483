@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acciline+ · Gagné, perdu · 2024 à 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://ayming-france.github.io/assets/engine/slides.css">
+  <style>
+    :root {
+      --ay-primary: #11a9e6;
+      --ay-dark: #00456d;
+      --ay-text: #0f172a;
+      --ay-gray: #6b7280;
+      --ay-light: #9ca3af;
+      --ay-line: #e5e7eb;
+      --ay-bg-subtle: #eef2f6;
+      --ay-bg-light: #f8fafc;
+      --src-mkt: #00AEEF;
+      --src-part: #004A76;
+      --src-sdr: #7B5EC6;
+      --src-ventes: #E8743B;
+    }
+    .slide-inner.insights { padding: 48px 72px; width: 100%; }
+    .slide-eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: 12px; font-weight: 700; color: var(--ay-primary); margin-bottom: 8px; }
+    .slide-title.compact { font-size: 30px; margin-bottom: 14px; }
+    .slide-subtitle { font-size: 16px; color: var(--ay-gray); max-width: 820px; margin: 0 0 40px 0; line-height: 1.45; }
+    .footnote { font-size: 11px; color: var(--ay-light); margin-top: 18px; line-height: 1.5; }
+    .footnote b { color: var(--ay-gray); font-weight: 700; }
+    .num { font-variant-numeric: tabular-nums; }
+
+    /* Author credit */
+    .banner-credit { margin-left: auto; margin-right: 28px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.92); letter-spacing: 0.3px; white-space: nowrap; text-decoration: none; }
+    .banner-credit:hover { text-decoration: underline; color: #fff; }
+    .banner-credit + .banner-controls { margin-left: 0; }
+    .cover-credit { margin-top: 20px; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: 0.3px; opacity: 0.9; }
+
+    /* 1 · scope chain */
+    .chain { display: grid; grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1.25fr; align-items: stretch; width: 100%; }
+    .chain-node { background: #fff; border: 1px solid var(--ay-line); border-radius: 12px; padding: 18px 18px; display: flex; flex-direction: column; justify-content: center; }
+    .chain-node .n { font-size: 40px; font-weight: 900; color: var(--ay-dark); line-height: 1; }
+    .chain-node .n.minus { color: var(--ay-gray); }
+    .chain-node .l { font-size: 13px; color: var(--ay-text); margin-top: 8px; line-height: 1.4; font-weight: 600; }
+    .chain-node .d { font-size: 12px; color: var(--ay-gray); margin-top: 6px; line-height: 1.4; }
+    .chain-node.final { background: var(--ay-dark); border-color: var(--ay-dark); }
+    .chain-node.final .n, .chain-node.final .l { color: #fff; }
+    .chain-node.final .d { color: rgba(255,255,255,0.8); }
+    .chain-arrow { display: flex; align-items: center; justify-content: center; color: var(--ay-light); }
+    .aside-out { margin-top: 26px; display: flex; gap: 14px; align-items: center; font-size: 13px; color: var(--ay-gray); border: 1px dashed var(--ay-line); border-radius: 10px; padding: 12px 16px; width: 100%; }
+    .aside-out b { color: var(--ay-text); }
+
+    /* 2 · editorial numerals */
+    .numerals { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px; width: 100%; }
+    .numeral { border-top: 2px solid var(--ay-dark); padding-top: 14px; }
+    .numeral .big { font-size: 52px; font-weight: 900; color: var(--ay-primary); line-height: 1; letter-spacing: -1px; }
+    .numeral .big small { font-size: 24px; font-weight: 700; }
+    .numeral h3 { font-size: 15px; color: var(--ay-dark); margin: 12px 0 6px; line-height: 1.3; }
+    .numeral p { font-size: 12.5px; color: var(--ay-gray); line-height: 1.45; margin: 0; }
+
+    /* 3 · two businesses */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; }
+    .cmp-col { background: #fff; border: 1px solid var(--ay-line); border-radius: 14px; padding: 22px 26px; }
+    .cmp-col h3 { margin: 0 0 4px; font-size: 18px; color: var(--ay-dark); }
+    .cmp-col .sub { font-size: 12px; color: var(--ay-gray); margin-bottom: 14px; }
+    .cmp-rate { display: flex; align-items: baseline; gap: 10px; }
+    .cmp-rate .big { font-size: 64px; font-weight: 900; color: var(--ay-primary); line-height: 1; }
+    .cmp-rate .lab { font-size: 14px; color: var(--ay-text); font-weight: 600; }
+    .cmp-bar { height: 10px; background: var(--ay-bg-subtle); border-radius: 5px; margin: 12px 0 16px; overflow: hidden; }
+    .cmp-bar span { display: block; height: 100%; background: var(--ay-primary); border-radius: 5px; }
+    .cmp-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .cmp-facts div { background: var(--ay-bg-light); border-radius: 8px; padding: 10px 12px; }
+    .cmp-facts b { display: block; font-size: 20px; color: var(--ay-dark); }
+    .cmp-facts span { font-size: 11.5px; color: var(--ay-gray); }
+    .trend { margin-top: 14px; font-size: 12.5px; color: var(--ay-gray); }
+    .trend b { color: var(--ay-dark); }
+
+    /* 4 · modules, demand vs win rate */
+    .modtab { width: 100%; display: grid; grid-template-columns: 230px 1fr 1fr; column-gap: 26px; row-gap: 7px; align-items: center; font-size: 13px; }
+    .modtab .hd { font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--ay-gray); font-weight: 700; padding-bottom: 4px; }
+    .modtab .lb { font-weight: 600; color: var(--ay-text); }
+    .bar { display: flex; align-items: center; gap: 10px; }
+    .bar .tr { flex: 1; height: 18px; background: var(--ay-bg-subtle); border-radius: 4px; overflow: hidden; }
+    .bar .fl { display: block; height: 100%; background: var(--ay-light); border-radius: 4px; }
+    .bar.rate .fl { background: var(--ay-primary); }
+    .bar .v { width: 92px; text-align: right; font-weight: 700; color: var(--ay-text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .bar .v small { font-weight: 500; color: var(--ay-gray); }
+    .modtab .hot { color: var(--ay-dark); font-weight: 800; }
+
+    /* 5 · deal size columns */
+    .bands { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; width: 100%; align-items: end; height: 300px; }
+    .band { display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+    .band .rate { font-size: 34px; font-weight: 900; color: var(--ay-dark); text-align: center; margin-bottom: 8px; }
+    .band .col { background: var(--ay-primary); border-radius: 8px 8px 0 0; }
+    .band.dim .col { background: #9fd8f3; }
+    .band .lab { text-align: center; font-weight: 700; color: var(--ay-text); margin-top: 10px; font-size: 15px; }
+    .band .cnt { text-align: center; font-size: 12px; color: var(--ay-gray); margin-top: 3px; }
+
+    /* 6 · who signs, two panels */
+    .panels { display: grid; grid-template-columns: 1fr 1.25fr; gap: 36px; width: 100%; }
+    .panel h3 { font-size: 15px; color: var(--ay-dark); margin: 0 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--ay-primary); }
+    .rows { display: flex; flex-direction: column; gap: 8px; }
+    .row { display: grid; grid-template-columns: 150px 1fr 108px; gap: 12px; align-items: center; font-size: 13px; }
+    .row .lb { font-weight: 600; color: var(--ay-text); }
+    .row .tr { height: 18px; background: var(--ay-bg-subtle); border-radius: 4px; overflow: hidden; }
+    .row .fl { display: block; height: 100%; background: var(--ay-primary); border-radius: 4px; }
+    .row .v { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .row .v small { font-weight: 500; color: var(--ay-gray); }
+    .row.big .lb { font-size: 14px; }
+    .row.big .tr { height: 26px; }
+
+    /* 7 · sources */
+    .src-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 40px; width: 100%; }
+    .fam { display: flex; flex-direction: column; gap: 12px; }
+    .fam-i { display: grid; grid-template-columns: 14px 1fr auto; gap: 10px; align-items: center; background: #fff; border: 1px solid var(--ay-line); border-radius: 10px; padding: 12px 14px; }
+    .fam-i i.dot { width: 12px; height: 12px; border-radius: 50%; display: block; }
+    .fam-i .nm { font-weight: 700; color: var(--ay-text); font-size: 14px; }
+    .fam-i .nm small { display: block; font-weight: 500; color: var(--ay-gray); font-size: 11.5px; margin-top: 2px; }
+    .fam-i .pc { font-size: 26px; font-weight: 900; color: var(--ay-dark); }
+
+    /* 8 · funnel */
+    .funnel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; width: 100%; }
+    .chev { position: relative; background: var(--ay-bg-subtle); padding: 22px 30px 22px 34px; clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%, 22px 50%); }
+    .chev:first-child { clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%); }
+    .chev .st { font-size: 12px; text-transform: uppercase; letter-spacing: .6px; color: var(--ay-gray); font-weight: 700; }
+    .chev .n { font-size: 40px; font-weight: 900; color: var(--ay-dark); line-height: 1.1; margin-top: 6px; }
+    .chev .p { font-size: 13px; color: var(--ay-gray); }
+    .chev.hot { background: var(--ay-dark); }
+    .chev.hot .st, .chev.hot .p { color: rgba(255,255,255,.8); }
+    .chev.hot .n { color: #fff; }
+    .dur { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 30px; width: 100%; }
+    .dur div { border-top: 2px solid var(--ay-line); padding-top: 12px; }
+    .dur b { font-size: 34px; font-weight: 900; color: var(--ay-primary); }
+    .dur span { display: block; font-size: 13px; color: var(--ay-gray); margin-top: 4px; }
+
+    /* 9 · four forces */
+    .forces { display: grid; grid-template-columns: 1fr 1fr 250px; gap: 14px; width: 100%; }
+    .force { background: #fff; border: 1px solid var(--ay-line); border-radius: 12px; padding: 16px 18px; }
+    .force .k { font-size: 11px; text-transform: uppercase; letter-spacing: .7px; color: var(--ay-primary); font-weight: 800; }
+    .force .h { display: flex; align-items: baseline; gap: 10px; margin: 6px 0 6px; }
+    .force .h b { font-size: 38px; font-weight: 900; color: var(--ay-dark); line-height: 1; }
+    .force .h span { font-size: 14px; font-weight: 700; color: var(--ay-text); }
+    .force p { margin: 0; font-size: 12.5px; color: var(--ay-gray); line-height: 1.45; }
+    .force.inaction { background: var(--ay-bg-light); }
+    .side { grid-row: span 2; background: var(--ay-dark); color: #fff; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+    .side .big { font-size: 56px; font-weight: 900; line-height: 1; }
+    .side p { margin: 0; font-size: 13px; line-height: 1.5; color: rgba(255,255,255,.88); }
+    .side .mini { border-top: 1px solid rgba(255,255,255,.25); padding-top: 12px; font-size: 12px; color: rgba(255,255,255,.75); }
+
+    /* 10 · competitors and gaps */
+    .cg { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; width: 100%; }
+    .cg h3 { font-size: 15px; color: var(--ay-dark); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--ay-primary); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { border: 1px solid var(--ay-line); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 600; color: var(--ay-text); background: #fff; }
+    .chip b { color: var(--ay-primary); margin-left: 4px; }
+    .chip.top { border-color: var(--ay-primary); }
+    .others { font-size: 11.5px; color: var(--ay-gray); margin-top: 10px; line-height: 1.5; }
+    .quote { margin-top: 18px; padding: 14px 16px; border-radius: 10px; background: var(--ay-bg-light); font-size: 14px; color: var(--ay-dark); font-weight: 600; line-height: 1.45; }
+    .quote small { display: block; font-weight: 500; font-size: 11.5px; color: var(--ay-gray); margin-top: 6px; }
+
+    /* 11 · recommendations */
+    .recos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: 100%; }
+    .reco { background: #fff; border: 1px solid var(--ay-line); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+    .reco .top { display: flex; align-items: center; gap: 10px; }
+    .reco .ic { width: 30px; height: 30px; border-radius: 8px; background: var(--ay-bg-subtle); color: var(--ay-dark); display: flex; align-items: center; justify-content: center; flex: none; }
+    .reco .ic svg { width: 17px; height: 17px; }
+    .reco h4 { margin: 0; font-size: 14.5px; color: var(--ay-dark); line-height: 1.3; }
+    .reco .why { font-size: 12px; color: var(--ay-primary); font-weight: 700; }
+    .reco p { margin: 0; font-size: 12.5px; color: var(--ay-text); line-height: 1.45; }
+    .reco .own { margin-top: auto; font-size: 11px; color: var(--ay-gray); text-transform: uppercase; letter-spacing: .6px; font-weight: 700; }
+
+    /* 12 · method */
+    .meth { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; width: 100%; }
+    .meth h3 { font-size: 15px; color: var(--ay-dark); margin: 0 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--ay-primary); }
+    .mrow { display: grid; grid-template-columns: 150px 1fr; gap: 14px; padding: 8px 0; border-bottom: 1px solid var(--ay-bg-subtle); font-size: 12.5px; line-height: 1.45; }
+    .mrow b { color: var(--ay-text); }
+    .mrow span { color: var(--ay-gray); }
+  </style>
+</head>
+<body>
+
+  <nav class="chapter-nav">
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+    <div class="nav-header">
+      <div class="nav-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+      <a class="nav-subtitle" href="https://www.acciline.com" target="_blank">Acciline+ · Gagné, perdu</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Analyse</div>
+      <div class="nav-item active" data-slide="0"><span class="nav-item-number">01</span>Couverture</div>
+      <div class="nav-item" data-slide="1"><span class="nav-item-number">02</span>Le périmètre</div>
+      <div class="nav-item" data-slide="2"><span class="nav-item-number">03</span>Cinq constats</div>
+      <div class="nav-item" data-slide="3"><span class="nav-item-number">04</span>Deux métiers</div>
+      <div class="nav-item" data-slide="4"><span class="nav-item-number">05</span>Ce que demandent les nouveaux clients</div>
+      <div class="nav-item" data-slide="5"><span class="nav-item-number">06</span>La taille des affaires</div>
+      <div class="nav-item" data-slide="6"><span class="nav-item-number">07</span>Qui signe</div>
+      <div class="nav-item" data-slide="7"><span class="nav-item-number">08</span>D'où viennent les nouveaux clients</div>
+      <div class="nav-item" data-slide="8"><span class="nav-item-number">09</span>Où les affaires s'arrêtent</div>
+      <div class="nav-item" data-slide="9"><span class="nav-item-number">10</span>Pourquoi on perd</div>
+      <div class="nav-item" data-slide="10"><span class="nav-item-number">11</span>Concurrents et manques</div>
+      <div class="nav-item" data-slide="11"><span class="nav-item-number">12</span>Pour le plan marketing</div>
+      <div class="nav-item" data-slide="12"><span class="nav-item-number">13</span>Méthode et limites</div>
+    </div>
+  </nav>
+
+  <div class="slide-counter"><span class="current">1</span>/13</div>
+
+  <main class="presentation">
+
+    <!-- 0 · COUVERTURE -->
+    <section data-name="Couverture" class="slide cover active">
+      <div class="cover-layout">
+        <div class="cover-left">
+          <div class="cover-logo"><img src="https://raw.githubusercontent.com/ayming-france/assets/main/logos/ayming-logo.png" alt="Ayming"></div>
+          <h1 class="cover-title">Pourquoi on gagne,<br>pourquoi on perd</h1>
+          <p class="cover-subtitle">Acciline+ · affaires clôturées de janvier 2024 à octobre 2026</p>
+          <p class="cover-credit">José J Encarnación Saiter | Marketing · 29 octobre 2026</p>
+        </div>
+        <div class="cover-right">
+          <img class="cover-image" src="https://ayming-france.github.io/assets/imagery/stock/unsplash-1521737711867-e3b97375f902-1000x1200.jpg" alt="Une équipe au travail autour d'une table">
+        </div>
+      </div>
+    </section>
+
+    <!-- 1 · PERIMETRE -->
+    <section data-name="Le périmètre" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Le périmètre</div>
+        <h1 class="slide-title compact">L'analyse porte sur 1&#8239;266 affaires, gagnées comme perdues</h1>
+        <p class="slide-subtitle">Toutes les affaires Acciline+ clôturées du 1er janvier 2024 au 29 octobre 2026, moins ce qui n'est pas une vente.</p>
+        <div class="chain">
+          <div class="chain-node ay-in" style="--d:.1s"><div class="n">1&#8239;345</div><div class="l">affaires Acciline+ clôturées</div><div class="d">portées par un commercial Ayming Digital, plus 7 portées par la France avec un produit Acciline+</div></div>
+          <div class="chain-arrow"><i data-lucide="chevron-right"></i></div>
+          <div class="chain-node ay-in" style="--d:.25s"><div class="n minus">−48</div><div class="l">enregistrements à 0&nbsp;€</div><div class="d">transferts de contrats vers Ayming Digital en 2024 et redevances annuelles, la valeur est sur le contrat d'origine*</div></div>
+          <div class="chain-arrow"><i data-lucide="chevron-right"></i></div>
+          <div class="chain-node ay-in" style="--d:.4s"><div class="n minus">−31</div><div class="l">fausses pertes</div><div class="d">le commercial écrit dans l'affaire qu'elle fait doublon, qu'elle est rattachée à une autre ou qu'elle a été créée par erreur</div></div>
+          <div class="chain-arrow"><i data-lucide="chevron-right"></i></div>
+          <div class="chain-node final ay-in" style="--d:.55s"><div class="n">1&#8239;266</div><div class="l">affaires analysées</div><div class="d">662 gagnées · 604 perdues</div></div>
+        </div>
+        <div class="aside-out ay-in" style="--d:.7s"><i data-lucide="globe"></i><span>Ayming Pologne vend aussi Acciline+ (64 affaires, 1 gagnée), et une affaire belge s'y ajoute. Ces autres marchés restent hors de cette analyse.</span></div>
+        <p class="footnote">* Lecture des notes et des références de contrat, à confirmer avec l'administration des ventes.</p>
+      </div>
+    </section>
+
+    <!-- 2 · CONSTATS -->
+    <section data-name="Cinq constats" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">En résumé</div>
+        <h1 class="slide-title compact">Cinq chiffres résument l'analyse</h1>
+        <p class="slide-subtitle">Acciline+ signe facilement chez ses clients et difficilement chez les nouveaux.</p>
+        <div class="numerals">
+          <div class="numeral ay-in" style="--d:.1s"><div class="big">80<small>&nbsp;%</small></div><h3>chez les clients existants</h3><p>contre 21&nbsp;% chez les nouveaux clients.</p></div>
+          <div class="numeral ay-in" style="--d:.2s"><div class="big">33<small>&nbsp;%</small></div><h3>des offres de veille signées</h3><p>La veille réglementaire amène le plus de nouveaux clients. Le DUERP est le plus demandé et se signe à 14&nbsp;%.</p></div>
+          <div class="numeral ay-in" style="--d:.3s"><div class="big">54<small>&nbsp;%</small></div><h3>sous 5&nbsp;000&nbsp;€</h3><p>Au-dessus de 15&nbsp;000&nbsp;€, une offre sur sept est signée.</p></div>
+          <div class="numeral ay-in" style="--d:.4s"><div class="big">75<small>&nbsp;%</small></div><h3>par recommandation</h3><p>Une affaire recommandée se signe trois fois sur quatre, une affaire venue d'un salon ou d'un événement une fois sur huit.</p></div>
+          <div class="numeral ay-in" style="--d:.5s"><div class="big">1<small>&nbsp;sur&nbsp;2</small></div><h3>pertes sans décision</h3><p>Le projet est décalé, sans budget ou sans réponse. Un concurrent l'emporte dans une perte sur cinq.</p></div>
+        </div>
+        <p class="footnote">Nouveaux clients, sauf le premier chiffre. Le dernier constat porte sur les 169 pertes dont la note du commercial a été lue.</p>
+      </div>
+    </section>
+
+    <!-- 3 · DEUX METIERS -->
+    <section data-name="Deux métiers" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Ce qu'on vend</div>
+        <h1 class="slide-title compact">Étendre chez nos clients et conquérir les nouveaux sont deux métiers</h1>
+        <p class="slide-subtitle">Les clients existants signent vite des petites extensions. Les nouveaux clients rapportent des affaires plus grosses, mais une sur cinq.</p>
+        <div class="compare">
+          <div class="cmp-col ay-in" style="--d:.1s">
+            <h3>Clients existants</h3>
+            <div class="sub">extensions, ventes croisées et renouvellements</div>
+            <div class="cmp-rate"><span class="big">80&nbsp;%</span><span class="lab">signées<br>538 sur 669</span></div>
+            <div class="cmp-bar"><span style="width:80%"></span></div>
+            <div class="cmp-facts">
+              <div><b>1&#8239;800&nbsp;€</b><span>montant médian</span></div>
+              <div><b>2 jours</b><span>de l'affaire à la signature**</span></div>
+              <div><b>2,27&nbsp;M€</b><span>signés en tout</span></div>
+            </div>
+            <div class="trend">Taux de signature stable : <b>81&nbsp;%</b> en 2024, <b>80&nbsp;%</b> en 2025, <b>80&nbsp;%</b> en 2026*</div>
+          </div>
+          <div class="cmp-col ay-in" style="--d:.25s">
+            <h3>Nouveaux clients</h3>
+            <div class="sub">première affaire avec l'entreprise</div>
+            <div class="cmp-rate"><span class="big">21&nbsp;%</span><span class="lab">signées<br>124 sur 597</span></div>
+            <div class="cmp-bar"><span style="width:21%"></span></div>
+            <div class="cmp-facts">
+              <div><b>6&#8239;390&nbsp;€</b><span>montant médian</span></div>
+              <div><b>29 jours</b><span>de l'affaire à la signature**</span></div>
+              <div><b>1,75&nbsp;M€</b><span>signés en tout</span></div>
+            </div>
+            <div class="trend">Taux de signature : <b>19&nbsp;%</b> en 2024, <b>16&nbsp;%</b> en 2025, <b>31&nbsp;%</b> en 2026*</div>
+          </div>
+        </div>
+        <p class="footnote">Montant de l'affaire dans Salesforce. * 2026 jusqu'au 29 octobre. ** Depuis la création de l'affaire, souvent ouverte au moment de la proposition. Le premier contact a lieu avant.</p>
+      </div>
+    </section>
+
+    <!-- 4 · MODULES -->
+    <section data-name="Ce que demandent les nouveaux clients" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Ce qu'on vend · nouveaux clients</div>
+        <h1 class="slide-title compact">Le DUERP attire, la veille et l'AT/MP se signent</h1>
+        <p class="slide-subtitle">Pour chaque module, le nombre d'affaires qui le demandent et la part signée.</p>
+        <div class="modtab">
+          <div class="hd">Module demandé</div><div class="hd">Affaires qui le demandent</div><div class="hd">Part signée</div>
+          <div class="lb">Risques / DUERP</div><div class="bar ay-in" style="--d:.10s"><span class="tr"><span class="fl" style="width:100%"></span></span><span class="v">168</span></div><div class="bar rate ay-in" style="--d:.10s"><span class="tr"><span class="fl" style="width:14%"></span></span><span class="v">14&nbsp;% <small>· 24</small></span></div>
+          <div class="lb">Évènements (accidents, incidents)</div><div class="bar ay-in" style="--d:.16s"><span class="tr"><span class="fl" style="width:73%"></span></span><span class="v">123</span></div><div class="bar rate ay-in" style="--d:.16s"><span class="tr"><span class="fl" style="width:14%"></span></span><span class="v">14&nbsp;% <small>· 17</small></span></div>
+          <div class="lb hot">Veille réglementaire HSE</div><div class="bar ay-in" style="--d:.22s"><span class="tr"><span class="fl" style="width:52%"></span></span><span class="v">88</span></div><div class="bar rate ay-in" style="--d:.22s"><span class="tr"><span class="fl" style="width:33%"></span></span><span class="v hot">33&nbsp;% <small>· 29</small></span></div>
+          <div class="lb">Arbre des causes</div><div class="bar ay-in" style="--d:.28s"><span class="tr"><span class="fl" style="width:37%"></span></span><span class="v">62</span></div><div class="bar rate ay-in" style="--d:.28s"><span class="tr"><span class="fl" style="width:18%"></span></span><span class="v">18&nbsp;% <small>· 11</small></span></div>
+          <div class="lb">Équipements</div><div class="bar ay-in" style="--d:.34s"><span class="tr"><span class="fl" style="width:26%"></span></span><span class="v">43</span></div><div class="bar rate ay-in" style="--d:.34s"><span class="tr"><span class="fl" style="width:14%"></span></span><span class="v">14&nbsp;% <small>· 6</small></span></div>
+          <div class="lb hot">AT/MP</div><div class="bar ay-in" style="--d:.40s"><span class="tr"><span class="fl" style="width:21%"></span></span><span class="v">36</span></div><div class="bar rate ay-in" style="--d:.40s"><span class="tr"><span class="fl" style="width:39%"></span></span><span class="v hot">39&nbsp;% <small>· 14</small></span></div>
+          <div class="lb hot">Formations &amp; habilitations</div><div class="bar ay-in" style="--d:.46s"><span class="tr"><span class="fl" style="width:21%"></span></span><span class="v">36</span></div><div class="bar rate ay-in" style="--d:.46s"><span class="tr"><span class="fl" style="width:39%"></span></span><span class="v hot">39&nbsp;% <small>· 14</small></span></div>
+          <div class="lb">MyAcci+</div><div class="bar ay-in" style="--d:.52s"><span class="tr"><span class="fl" style="width:16%"></span></span><span class="v">27</span></div><div class="bar rate ay-in" style="--d:.52s"><span class="tr"><span class="fl" style="width:22%"></span></span><span class="v">22&nbsp;% <small>· 6</small></span></div>
+          <div class="lb">Audits &amp; inspections</div><div class="bar ay-in" style="--d:.58s"><span class="tr"><span class="fl" style="width:14%"></span></span><span class="v">23</span></div><div class="bar rate ay-in" style="--d:.58s"><span class="tr"><span class="fl" style="width:17%"></span></span><span class="v">17&nbsp;% <small>· 4</small></span></div>
+        </div>
+        <p class="footnote">Les modules sont lus dans le nom de l'affaire. 341 des 597 affaires nouveaux clients en nomment au moins un, et une affaire peut en nommer plusieurs. Le chiffre après le point est le nombre d'affaires signées.</p>
+      </div>
+    </section>
+
+    <!-- 5 · TAILLE DES AFFAIRES -->
+    <section data-name="La taille des affaires" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Ce qu'on vend · nouveaux clients</div>
+        <h1 class="slide-title compact">On signe les petites offres, on perd les grosses</h1>
+        <p class="slide-subtitle">Part des offres signées selon leur montant. Plus l'offre est grosse, moins elle est signée.</p>
+        <div class="bands">
+          <div class="band ay-in" style="--d:.1s"><div class="rate">54&nbsp;%</div><div class="col" style="height:180px"></div><div class="lab">Moins de 5&nbsp;k€</div><div class="cnt">56 signées sur 103</div></div>
+          <div class="band dim ay-in" style="--d:.2s"><div class="rate">21&nbsp;%</div><div class="col" style="height:70px"></div><div class="lab">5 à 15&nbsp;k€</div><div class="cnt">31 signées sur 145</div></div>
+          <div class="band dim ay-in" style="--d:.3s"><div class="rate">14&nbsp;%</div><div class="col" style="height:47px"></div><div class="lab">15 à 50&nbsp;k€</div><div class="cnt">31 signées sur 225</div></div>
+          <div class="band dim ay-in" style="--d:.4s"><div class="rate">18&nbsp;%</div><div class="col" style="height:60px"></div><div class="lab">50&nbsp;k€ et plus</div><div class="cnt">6 signées sur 34</div></div>
+        </div>
+        <p class="footnote">Montant de l'affaire. 90 pertes nouveaux clients n'ont pas de montant et ne sont pas comptées ici. La moitié des pertes chiffrées se situent entre 15 et 50&nbsp;k€.</p>
+      </div>
+    </section>
+
+    <!-- 6 · QUI SIGNE -->
+    <section data-name="Qui signe" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Qui signe · nouveaux clients</div>
+        <h1 class="slide-title compact">Les PME et les grands groupes signent, les ETI hésitent</h1>
+        <p class="slide-subtitle">Part des affaires signées selon l'effectif de l'entreprise et son secteur.</p>
+        <div class="panels">
+          <div class="panel">
+            <h3>Effectif</h3>
+            <div class="rows">
+              <div class="row big ay-in" style="--d:.1s"><span class="lb">Moins de 250</span><span class="tr"><span class="fl" style="width:24%"></span></span><span class="v">24&nbsp;% <small>· 319</small></span></div>
+              <div class="row big ay-in" style="--d:.18s"><span class="lb">250 à 999</span><span class="tr"><span class="fl" style="width:10%"></span></span><span class="v">10&nbsp;% <small>· 139</small></span></div>
+              <div class="row big ay-in" style="--d:.26s"><span class="lb">1&#8239;000 à 4&#8239;999</span><span class="tr"><span class="fl" style="width:14%"></span></span><span class="v">14&nbsp;% <small>· 69</small></span></div>
+              <div class="row big ay-in" style="--d:.34s"><span class="lb">5&#8239;000 et plus</span><span class="tr"><span class="fl" style="width:27%"></span></span><span class="v">27&nbsp;% <small>· 22</small></span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Secteur</h3>
+            <div class="rows">
+              <div class="row ay-in" style="--d:.1s"><span class="lb">Ingénierie</span><span class="tr"><span class="fl" style="width:57%"></span></span><span class="v">57&nbsp;% <small>· 23</small></span></div>
+              <div class="row ay-in" style="--d:.15s"><span class="lb">Transport, logistique</span><span class="tr"><span class="fl" style="width:33%"></span></span><span class="v">33&nbsp;% <small>· 48</small></span></div>
+              <div class="row ay-in" style="--d:.2s"><span class="lb">Agroalimentaire</span><span class="tr"><span class="fl" style="width:21%"></span></span><span class="v">21&nbsp;% <small>· 38</small></span></div>
+              <div class="row ay-in" style="--d:.25s"><span class="lb">Construction</span><span class="tr"><span class="fl" style="width:19%"></span></span><span class="v">19&nbsp;% <small>· 37</small></span></div>
+              <div class="row ay-in" style="--d:.3s"><span class="lb">Services aux entreprises</span><span class="tr"><span class="fl" style="width:16%"></span></span><span class="v">16&nbsp;% <small>· 44</small></span></div>
+              <div class="row ay-in" style="--d:.35s"><span class="lb">Santé</span><span class="tr"><span class="fl" style="width:15%"></span></span><span class="v">15&nbsp;% <small>· 27</small></span></div>
+              <div class="row ay-in" style="--d:.4s"><span class="lb">Commerce</span><span class="tr"><span class="fl" style="width:13%"></span></span><span class="v">13&nbsp;% <small>· 55</small></span></div>
+              <div class="row ay-in" style="--d:.45s"><span class="lb">Industrie</span><span class="tr"><span class="fl" style="width:11%"></span></span><span class="v">11&nbsp;% <small>· 36</small></span></div>
+              <div class="row ay-in" style="--d:.5s"><span class="lb">Secteur public</span><span class="tr"><span class="fl" style="width:9%"></span></span><span class="v">9&nbsp;% <small>· 32</small></span></div>
+            </div>
+          </div>
+        </div>
+        <p class="footnote">Le chiffre après le point est le nombre d'affaires. Effectif et secteur de la fiche entreprise dans Salesforce. Secteurs de 20 affaires ou plus, hors « Autre » et non renseigné.</p>
+      </div>
+    </section>
+
+    <!-- 7 · SOURCES -->
+    <section data-name="D'où viennent les nouveaux clients" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">D'où viennent les nouveaux clients</div>
+        <h1 class="slide-title compact">La recommandation signe trois fois sur quatre</h1>
+        <p class="slide-subtitle">Part des affaires signées selon la campagne d'origine de l'affaire, et selon son origine commerciale.</p>
+        <div class="src-grid">
+          <div class="panel">
+            <h3>Campagne d'origine</h3>
+            <div class="rows">
+              <div class="row ay-in" style="--d:.1s"><span class="lb">Recommandation</span><span class="tr"><span class="fl" style="width:75%"></span></span><span class="v">75&nbsp;% <small>· 16</small></span></div>
+              <div class="row ay-in" style="--d:.15s"><span class="lb">Comptes ciblés</span><span class="tr"><span class="fl" style="width:53%"></span></span><span class="v">53&nbsp;% <small>· 15</small></span></div>
+              <div class="row ay-in" style="--d:.2s"><span class="lb">Démo, essai</span><span class="tr"><span class="fl" style="width:25%"></span></span><span class="v">25&nbsp;% <small>· 149</small></span></div>
+              <div class="row ay-in" style="--d:.25s"><span class="lb">Télémarketing</span><span class="tr"><span class="fl" style="width:22%"></span></span><span class="v">22&nbsp;% <small>· 163</small></span></div>
+              <div class="row ay-in" style="--d:.3s"><span class="lb">Demande de contact</span><span class="tr"><span class="fl" style="width:14%"></span></span><span class="v">14&nbsp;% <small>· 36</small></span></div>
+              <div class="row ay-in" style="--d:.35s"><span class="lb">Événement, salon</span><span class="tr"><span class="fl" style="width:13%"></span></span><span class="v">13&nbsp;% <small>· 55</small></span></div>
+              <div class="row ay-in" style="--d:.4s"><span class="lb">Sans campagne</span><span class="tr"><span class="fl" style="width:8%"></span></span><span class="v">8&nbsp;% <small>· 149</small></span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Origine commerciale</h3>
+            <div class="fam">
+              <div class="fam-i ay-in" style="--d:.15s"><i class="dot" style="background:var(--src-part)"></i><span class="nm">Partenaires<small>apporteurs, clients et consultants Ayming · 92 affaires</small></span><span class="pc">37&nbsp;%</span></div>
+              <div class="fam-i ay-in" style="--d:.25s"><i class="dot" style="background:var(--src-ventes)"></i><span class="nm">Ventes<small>réseau du commercial, vente croisée · 89 affaires</small></span><span class="pc">31&nbsp;%</span></div>
+              <div class="fam-i ay-in" style="--d:.35s"><i class="dot" style="background:var(--src-mkt)"></i><span class="nm">Marketing<small>recherche Google, salons, appels entrants · 253 affaires</small></span><span class="pc">20&nbsp;%</span></div>
+              <div class="fam-i ay-in" style="--d:.45s"><i class="dot" style="background:var(--src-sdr)"></i><span class="nm">SDR, télémarketing<small>centre d'appels, fichiers achetés · 140 affaires</small></span><span class="pc">9&nbsp;%</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="footnote">Le chiffre après le point est le nombre d'affaires. Webinars (6) et livres blancs (7) sont trop peu nombreux pour un taux. L'origine commerciale est saisie par le commercial, et 23 affaires n'en ont pas.</p>
+      </div>
+    </section>
+
+    <!-- 8 · OU LES AFFAIRES S'ARRETENT -->
+    <section data-name="Où les affaires s'arrêtent" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Pourquoi on perd · nouveaux clients</div>
+        <h1 class="slide-title compact">56&nbsp;% des pertes arrivent après la proposition</h1>
+        <p class="slide-subtitle">Étape à laquelle se trouvait l'affaire quand elle a été perdue, sur 473 pertes.</p>
+        <div class="funnel">
+          <div class="chev ay-in" style="--d:.1s"><div class="st">Prospection</div><div class="n">35</div><div class="p">7&nbsp;%</div></div>
+          <div class="chev ay-in" style="--d:.2s"><div class="st">Identification</div><div class="n">147</div><div class="p">31&nbsp;%</div></div>
+          <div class="chev hot ay-in" style="--d:.3s"><div class="st">Proposition</div><div class="n">266</div><div class="p">56&nbsp;%</div></div>
+          <div class="chev ay-in" style="--d:.4s"><div class="st">Négociation</div><div class="n">25</div><div class="p">5&nbsp;%</div></div>
+        </div>
+        <div class="dur">
+          <div class="ay-in" style="--d:.5s"><b>29 jours</b><span>pour signer une affaire gagnée, en médiane</span></div>
+          <div class="ay-in" style="--d:.6s"><b>232 jours</b><span>avant de clôturer une affaire perdue, en médiane. Une proposition sans réponse reste ouverte près de huit mois.</span></div>
+        </div>
+        <p class="footnote">Durées mesurées depuis la création de l'affaire dans Salesforce.</p>
+      </div>
+    </section>
+
+    <!-- 9 · POURQUOI ON PERD -->
+    <section data-name="Pourquoi on perd" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Pourquoi on perd · nouveaux clients</div>
+        <h1 class="slide-title compact">On perd d'abord contre l'inaction</h1>
+        <p class="slide-subtitle">Un client change d'outil quand le besoin et l'attrait de la solution dépassent sa peur du changement et ses habitudes. Les notes des commerciaux ont été lues une par une et rangées dans ces quatre forces.</p>
+        <div class="forces">
+          <div class="force inaction ay-in" style="--d:.1s"><div class="k">Besoin pas assez pressant</div><div class="h"><b>49</b><span>budget, projet décalé</span></div><p>« manque de budget cette année », « Projet mis en stand by sur 2025 », « ce ne sera pas un projet pour l'année 2026 ».</p></div>
+          <div class="force inaction ay-in" style="--d:.2s"><div class="k">Habitude</div><div class="h"><b>22</b><span>on garde l'existant</span></div><p>Excel, un document Word, l'outil interne ou celui du groupe, l'éditeur déjà sous contrat.</p></div>
+          <div class="side ay-in" style="--d:.35s"><div class="big">53&nbsp;%</div><p>des pertes sont une non-décision, faute d'un besoin pressant, par habitude, ou parce que le contact ne répond plus (18).</p><div class="mini">Le prix est cité dans 9 pertes sur 169.</div></div>
+          <div class="force ay-in" style="--d:.15s"><div class="k">Attrait d'une autre solution</div><div class="h"><b>35</b><span>un concurrent retenu</span></div><p>Le concurrent est jugé plus souple, plus complet sur le QHSE ou présent à l'international (détail page suivante).</p></div>
+          <div class="force ay-in" style="--d:.25s"><div class="k">Peur du changement</div><div class="h"><b>24</b><span>manque, coût</span></div><p>Une fonction attendue absente (plan de prévention, hors ligne, visites médicales), ou un coût jugé trop haut.</p></div>
+        </div>
+        <p class="footnote">169 pertes ont une note lue, dont 21 qui ne disent pas pourquoi. Sur les 473 pertes, en prenant la raison de perte saisie quand il n'y a pas de note, on compte silence 148, budget 80, report 55, concurrent 41, manque 25, statu quo 22, prix 18, non précisé 84.</p>
+      </div>
+    </section>
+
+    <!-- 10 · CONCURRENTS ET MANQUES -->
+    <section data-name="Concurrents et manques" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Pourquoi on perd</div>
+        <h1 class="slide-title compact">Face à un concurrent, on perd sur la souplesse et la couverture</h1>
+        <p class="slide-subtitle">Concurrents et fonctions manquantes cités dans les notes des pertes, toutes affaires confondues.</p>
+        <div class="cg">
+          <div>
+            <h3>Concurrents cités · 36 pertes</h3>
+            <div class="chips ay-in" style="--d:.1s">
+              <span class="chip top">Bluekango<b>5</b></span><span class="chip top">Previsoft<b>4</b></span><span class="chip top">Preventeo<b>4</b></span><span class="chip">Knowllence<b>2</b></span><span class="chip">Apave<b>2</b></span><span class="chip">Symalean<b>2</b></span>
+            </div>
+            <p class="others">Une fois chacun : Quentic, Intelex, Winlassie, Kelio, Mainti4, YD Prév, Oviepro, Neuros, Gamma, ServiceNow, BlueTrust, E Santé, Alea Prévention, Cabinet Pradel, All HSE, la plateforme RSE d'un groupe, le logiciel offert par un assureur.</p>
+            <div class="quote ay-in" style="--d:.3s">Prix noté 10 sur 10, adéquation aux besoins fonctionnels notée 5 sur 10.<small>Notation d'un appel d'offres public, attribué à Knowllence</small></div>
+          </div>
+          <div>
+            <h3>Fonctions manquantes · 34 mentions</h3>
+            <div class="rows">
+              <div class="row ay-in" style="--d:.1s"><span class="lb">Ergonomie, souplesse</span><span class="tr"><span class="fl" style="width:100%"></span></span><span class="v">8</span></div>
+              <div class="row ay-in" style="--d:.15s"><span class="lb">QHSE complet</span><span class="tr"><span class="fl" style="width:88%"></span></span><span class="v">7</span></div>
+              <div class="row ay-in" style="--d:.2s"><span class="lb">International</span><span class="tr"><span class="fl" style="width:75%"></span></span><span class="v">6</span></div>
+              <div class="row ay-in" style="--d:.25s"><span class="lb">Plan de prévention</span><span class="tr"><span class="fl" style="width:50%"></span></span><span class="v">4</span></div>
+              <div class="row ay-in" style="--d:.3s"><span class="lb">Exigences de la DSI</span><span class="tr"><span class="fl" style="width:38%"></span></span><span class="v">3</span></div>
+              <div class="row ay-in" style="--d:.35s"><span class="lb">Visites médicales</span><span class="tr"><span class="fl" style="width:25%"></span></span><span class="v">2</span></div>
+              <div class="row ay-in" style="--d:.4s"><span class="lb">Audits</span><span class="tr"><span class="fl" style="width:25%"></span></span><span class="v">2</span></div>
+              <div class="row ay-in" style="--d:.45s"><span class="lb">Reporting, hors ligne</span><span class="tr"><span class="fl" style="width:25%"></span></span><span class="v">2</span></div>
+            </div>
+            <div class="quote ay-in" style="--d:.5s">« en retrait sur la partie métier - Module Risques DUER (moins ludique et ergonomique que préventeo) »<small>Note d'un commercial après un appel d'offres perdu</small></div>
+          </div>
+        </div>
+        <p class="footnote">QHSE complet veut dire environnement, qualité ou RSE dans le même outil. Le plan de prévention inclut la co-activité. Les exigences de la DSI portent sur l'hébergement, l'authentification unique et le logiciel en ligne.</p>
+      </div>
+    </section>
+
+    <!-- 11 · RECOS -->
+    <section data-name="Pour le plan marketing" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Pour le plan marketing</div>
+        <h1 class="slide-title compact">Le plan marketing peut s'appuyer sur six pistes</h1>
+        <p class="slide-subtitle">Chaque piste part d'un chiffre de cette analyse.</p>
+        <div class="recos">
+          <div class="reco ay-in" style="--d:.1s"><div class="top"><span class="ic"><i data-lucide="handshake"></i></span><h4>Organiser la recommandation</h4></div><div class="why">75&nbsp;% signées par recommandation</div><p>Un programme d'apporteurs avec les clients et les consultants Ayming, qui apportent déjà la majorité des affaires de partenaires.</p><div class="own">Marketing · Ventes</div></div>
+          <div class="reco ay-in" style="--d:.18s"><div class="top"><span class="ic"><i data-lucide="door-open"></i></span><h4>Entrer par la veille et l'AT/MP</h4></div><div class="why">33 à 39&nbsp;% signées, 54&nbsp;% sous 5&nbsp;k€</div><p>Une offre d'entrée sur un module, vite déployée. L'extension suit, et les clients existants signent à 80&nbsp;%.</p><div class="own">Marketing · Produit</div></div>
+          <div class="reco ay-in" style="--d:.26s"><div class="top"><span class="ic"><i data-lucide="file-spreadsheet"></i></span><h4>Chiffrer le coût de l'existant</h4></div><div class="why">1 perte sur 2 est une non-décision</div><p>Des contenus et cas clients qui montrent ce que coûte un DUERP sur Excel ou un suivi d'accidents à la main, pour donner une raison d'agir cette année.</p><div class="own">Marketing</div></div>
+          <div class="reco ay-in" style="--d:.34s"><div class="top"><span class="ic"><i data-lucide="target"></i></span><h4>Revoir la cible ETI</h4></div><div class="why">10 à 14&nbsp;% entre 250 et 5&#8239;000 salariés</div><p>Un message propre aux ETI, ou des campagnes concentrées sur les PME, les grands groupes, l'ingénierie et le transport.</p><div class="own">Marketing</div></div>
+          <div class="reco ay-in" style="--d:.42s"><div class="top"><span class="ic"><i data-lucide="calendar-x"></i></span><h4>Revoir la place des salons</h4></div><div class="why">13&nbsp;% signées après un événement</div><p>Mesurer le coût par affaire signée de chaque salon avant de reconduire, et suivre les contacts en démo, qui signe à 25&nbsp;%.</p><div class="own">Marketing</div></div>
+          <div class="reco ay-in" style="--d:.5s"><div class="top"><span class="ic"><i data-lucide="clipboard-list"></i></span><h4>Mieux saisir les pertes</h4></div><div class="why">concurrent nommé dans 3&nbsp;% des pertes</div><p>Des raisons de perte alignées sur les quatre forces, le concurrent obligatoire, et la remontée des fonctions manquantes au produit.</p><div class="own">Ventes · Produit</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 · METHODE -->
+    <section data-name="Méthode et limites" class="slide airy">
+      <div class="slide-inner insights">
+        <div class="slide-eyebrow">Méthode et limites</div>
+        <h1 class="slide-title compact">Chaque chiffre a sa méthode et ses limites</h1>
+        <p class="slide-subtitle">Tous les chiffres viennent des affaires Salesforce, extraites le 29 octobre 2026.</p>
+        <div class="meth">
+          <div>
+            <h3>Comment</h3>
+            <div class="mrow"><b>Affaires Acciline+</b><span>Le commercial est rattaché à Ayming Digital. Les produits le confirment, car on ne les retrouve presque nulle part ailleurs.</span></div>
+            <div class="mrow"><b>Nouveau ou existant</b><span>Le type d'affaire saisi, nouveau client, extension, vente croisée ou renouvellement.</span></div>
+            <div class="mrow"><b>Modules demandés</b><span>Lus dans le nom de l'affaire, car les lignes de produit ne détaillent les modules que depuis 2025.</span></div>
+            <div class="mrow"><b>Raisons de perte</b><span>217 notes de commerciaux lues une par une et rangées dans les quatre forces, la raison saisie ailleurs.</span></div>
+            <div class="mrow"><b>Fausses pertes</b><span>Uniquement quand le commercial l'écrit. Deux affaires sur le même client ne prouvent pas un doublon.</span></div>
+          </div>
+          <div>
+            <h3>Ce qu'on ne peut pas mesurer</h3>
+            <div class="mrow"><b>Remises</b><span>Le prix catalogue vaut 1&nbsp;€ sur toutes les lignes, l'écart au tarif n'existe donc pas dans Salesforce.</span></div>
+            <div class="mrow"><b>Concurrents</b><span>Le champ est rempli sur 3&nbsp;% des pertes, d'où la lecture des notes.</span></div>
+            <div class="mrow"><b>Raison de perte</b><span>Toujours remplie, mais « pas de décision » et « autre » en font 41&nbsp;%.</span></div>
+            <div class="mrow"><b>Durée du cycle</b><span>Comptée depuis la création de l'affaire, ouverte souvent au moment de la proposition.</span></div>
+            <div class="mrow"><b>La parole client</b><span>Les notes viennent des commerciaux. Une dizaine d'entretiens avec des acheteurs confirmerait les quatre forces.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="keyboard-hint">
+    <span><span class="key" id="key-prev">←</span><span class="key" id="key-next">→</span> Naviguer</span>
+    <span><span class="key" id="key-fullscreen">F</span> Plein écran</span>
+  </div>
+
+  <script src="https://ayming-france.github.io/assets/engine/slides.js"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+  <script>
+    // Author credit (anti-plagiarism), placed in the engine's footer banner before the page counter once the banner exists
+    (function () {
+      var tries = 0;
+      var add = function () {
+        var controls = document.querySelector('.banner-controls');
+        if (controls) {
+          if (!document.querySelector('.banner-credit')) {
+            var credit = document.createElement('a');
+            credit.className = 'banner-credit';
+            credit.href = 'mailto:jencarnacion@ayming.com';
+            credit.textContent = 'Par José J Encarnación Saiter';
+            controls.parentNode.insertBefore(credit, controls);
+          }
+          return;
+        }
+        if (++tries < 50) setTimeout(add, 100);
+      };
+      add();
+    })();
+  </script>
+</body>
+</html>
