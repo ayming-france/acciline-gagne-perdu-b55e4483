@@ -854,6 +854,14 @@ details.why .whyin .footnote { margin-top:10px; }
 .mpg.one button, .mpg.one span { display:none; }
 .mpg em { font-style:normal; margin-left:10px; }
 
+/* the notes panel sits on the slide frame, the same place and size on every module slide */
+section.slide:has(details.why) { position:relative; }
+section.slide .slide-inner:has(> details.why) { position:static; }
+details.why .whyin { top:56px; bottom:56px; }
+
+/* module slides share one content height, so the fit scaling, and the notes panel inside it, is the same on each */
+section.slide .slide-inner:has(> details.why) { min-height:582px; }
+
   </style>
 </head>
 <body>
