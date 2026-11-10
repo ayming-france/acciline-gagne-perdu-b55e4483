@@ -997,6 +997,8 @@ details.why .mpanes .vq p, .mpanes .vq p { display:block; -webkit-line-clamp:uns
 .sgl { font-size:14px; font-weight:700; color:var(--ay-dark); } .sgl small { display:block; font-size:11.5px; font-weight:400; color:var(--ay-gray); }
 .sgb { height:16px; background:#e6edf2; border-radius:6px; overflow:hidden; } .sgb i { display:block; height:100%; background:var(--ay-dark); }
 .sgr b { font-size:18px; font-weight:900; text-align:right; color:var(--ay-dark); }
+/* a quote alone on its row (a single quote, or the odd last one) takes the full width (José 2026-11-10) */
+.vgrid > .vq:last-child:nth-child(odd) { grid-column:1 / -1; }
 
   </style>
 </head>
